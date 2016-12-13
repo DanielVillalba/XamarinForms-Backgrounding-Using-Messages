@@ -41,7 +41,12 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Messages\CancelledMessage.cs" />
+    <Compile Include="Messages\StartLongRunningTaskMessage.cs" />
+    <Compile Include="Messages\StopLongRunningTaskMessage.cs" />
+    <Compile Include="Messages\TickedMessage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TaskCounter.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MainPage.xaml">

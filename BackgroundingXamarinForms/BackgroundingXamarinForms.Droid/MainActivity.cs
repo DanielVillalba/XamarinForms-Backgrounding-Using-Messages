@@ -6,6 +6,9 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Xamarin.Forms;
+using Android.Content;
+using BackgroundingXamarinForms.Droid.Services;
 
 namespace BackgroundingXamarinForms.Droid
 {
@@ -21,6 +24,23 @@ namespace BackgroundingXamarinForms.Droid
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());
+
+            WireUpLongRunningTask();
+        }
+
+        void WireUpLongRunningTask()
+        {
+            MessagingCenter.Subscribe<Messages.StartLongRunningTaskMessage>(this, "StartLongRunningTaskMessage", message =>
+             {
+                 var intent = new Intent(this, typeof(LongRunningTaskService));
+                 StartService(intent);
+             });
+
+            MessagingCenter.Subscribe<Messages.StopLongRunningTaskMessage>(this, "StopLongRunningTaskMessage", message =>
+             {
+                 var intent = new Intent(this, typeof(LongRunningTaskService));
+                 StopService(intent);
+             });
         }
     }
 }

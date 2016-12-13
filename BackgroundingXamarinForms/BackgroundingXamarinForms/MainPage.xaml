@@ -4,8 +4,18 @@
              xmlns:local="clr-namespace:BackgroundingXamarinForms"
              x:Class="BackgroundingXamarinForms.MainPage">
 
-  <Label Text="Welcome to Xamarin Forms!"
-           VerticalOptions="Center"
-           HorizontalOptions="Center" />
+  <StackLayout Orientation="Vertical"
+               HorizontalOptions="Center"
+               VerticalOptions="Center">
+    <Button Text="Start Long Running Task"
+            x:Name="startButtton"/>
+    <Button Text="Stop Long Running Task"
+            x:Name="stopButton"/>
+    <Label Text=""
+           x:Name="ticker"
+           FontSize="Large"
+           HorizontalOptions="CenterAndExpand"/>
+    
+  </StackLayout>
 
 </ContentPage>
