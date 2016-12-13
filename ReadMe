@@ -1,0 +1,4 @@
+This sample takes advantage of the MessagingCenter class in order to sync the backgrounding mechanism of Android (service), 
+for further reference check the following url:
+
+http://arteksoftware.com/backgrounding-with-xamarin-forms/
